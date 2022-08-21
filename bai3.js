@@ -8,11 +8,14 @@
 + tiền sau quy đổi
 */
 
-// đầu vào
-var dolar = 2;
-const vnd = 23500;
-var quyDoi = 0;
-//Xử lý
-quyDoi = dolar * vnd;
-//đầu ra
-console.log("kết quả quy đổi: " +quyDoi + " VND");
+//tính HCN
+document.getElementById("btntinh").onclick = function () {
+    var cd = document.getElementById("cd").value * 1;
+    var cr = document.getElementById("cr").value * 1;
+    var tinhcv = (cd + cr) * 2;
+    var tinhdt = cd * cr;
+    var kqhcn = "<p> Diện tích: " + tinhdt +"</p>";
+    kqhcn += "<p> chu vi: " + tinhcv + "</p>";
+    document.getElementById(showInfoHCN).innerHTML = kqhcn;
+
+};
