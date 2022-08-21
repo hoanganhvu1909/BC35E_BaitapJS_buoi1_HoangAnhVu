@@ -11,11 +11,20 @@ Mô hình 3 khối:
 + Hiển thị lương
 */
 
-//Đầu vào
-const luongMotngay = 100000;
-const soNgaylam = 20;
-var luong = 0;
-//Xử lý
-luong = luongMotngay * soNgaylam
-//đầu ra
-console.log("tiền lương: " +luong)
+//bài tâp tính tiền lương nhân viên
+
+var tienLuong = document.getElementById("tienLuong");
+tienLuong.onclick = function () {
+    //Đầu vào: Lấy thông tin User
+    const LUONG_NGAY = 100000;
+
+    // format VND
+    var currentFormat = new Intl.NumberFormat("NV-vn");
+    var soNgaylam = document.getElementById("soNgaylam").value * 1;
+
+    //Xử lý
+    var tongLuong = soNgaylam * LUONG_NGAY;
+    var kqTienluong = "<p> Tổng lương là: " + currentFormat.format(tongLuong) + "VND</p>";
+    //Đầu ra
+    document.getElementById("tienLuong").innerHTML = kqTienluong;
+}
