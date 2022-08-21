@@ -13,14 +13,15 @@ Mô hình ba khối:
 */
 
 
-//đầu vào
-var number1 = 100;
-var number2 = 10;
-var number3 = 200;
-var number4 = 300;
-var number5 = 30;
-var tongTrungbinh = 0;
-// xử lý
-tongTrungbinh = (number1 + number2 + number3 + number4 + number5) / 5;
-// đầu ra
-console.log("tổng trung bình của 5 số thực: " +tongTrungbinh)
+//QUy đổi tiền
+var btnQuydoitien = document.getElementById("btnQuydoitien");
+btnQuydoitien.onclick = function () {
+    const tienViet = 23500;
+    var USD = document.getElementById("USD").value * 1;
+    var quyDoi = tienViet * USD;
+    // format VND
+    var currentFormat = new Intl.NumberFormat("NV-vn");
+    var kqQuydoi = "<p> Tiền sau quy đổi: " + currentFormat.format(quyDoi) + " VND</p>";
+    document.getElementById("showInfoquydoitien").innerHTML = kqQuydoi;
+
+};
